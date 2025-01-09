@@ -5,7 +5,7 @@ class Solution {
      */
     encode(strs) {
         const lengths = strs.map(str => str.length + ',').join('')
-        return lengths + '#' + strs.join('')
+        return lengths + '?' + strs.join('')
     }
     
     /**
@@ -14,7 +14,7 @@ class Solution {
      */
     decode(str) {
         const decoded = []
-        const [lengths, concatenated] = str.split('#')
+        const [lengths, concatenated] = str.split('?')
         const lengthsArray = lengths.split(',').filter(x => x)
         
         let start = 0
